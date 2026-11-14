@@ -179,7 +179,7 @@ def updateShipLiam(ship: Ship, powerUps: List[PowerUp], targets: List[Target]):
             targetDict.append({
                 "target" : otherShip,
                 "type" : "target",
-                "value" : 0.2
+                "value" : 0.6
             })
         for powerup in powerups:
             powerupDict.append({
@@ -190,7 +190,7 @@ def updateShipLiam(ship: Ship, powerUps: List[PowerUp], targets: List[Target]):
         return targetDict, powerupDict
 
     distBaseVal = 1
-    distReciprocalMulti = 10
+    distReciprocalMulti = 20
 
     def categorizeDistance(targetDict, powerupDict ):
         for entry in targetDict:
@@ -257,7 +257,7 @@ def updateShipLiam(ship: Ship, powerUps: List[PowerUp], targets: List[Target]):
 
         return powerupDict 
 
-    proximityMulti = 0.005
+    proximityMulti = 0.4
     
     def catizgorizeProximityToOther(targetDict, powerupDict):
 
@@ -289,7 +289,7 @@ def updateShipLiam(ship: Ship, powerUps: List[PowerUp], targets: List[Target]):
 
         return targetDict, powerupDict
         #scan around a radius around each and check if more things ther e
-    baseRotSlope = 0.01
+    baseRotSlope = 0.1
     def categorizeRotation(targetDict, powerupDict):
         
         for entry in targetDict:
